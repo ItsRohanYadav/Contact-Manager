@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scm.forms.userForm;
+
 @Controller
 public class PageController {
+
+
 
     @RequestMapping("/home")
     public String home()
@@ -54,8 +57,7 @@ public class PageController {
     @RequestMapping("/signup")
     public String signup(Model model) {
         userForm userForm = new userForm();
-        userForm.setName("Rohan");
-        model.addAttribute( "userForm", userForm);
+        model.addAttribute("userForm", userForm);
         System.out.println("signup page handler");
         return "signup";
     }
@@ -66,6 +68,12 @@ public class PageController {
 
         System.out.println("processing registration");
         System.out.println(userForm);
+
+
+ 
+
+
+
         return "redirect:/signup";
     }
     

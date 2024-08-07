@@ -1,5 +1,7 @@
 package com.scm.entities;
 
-public enum providers {
-    SELF,GOOGLE,GITHUB;
+public enum Providers {
+
+    SELF, GOOGLE, GITHUB
+
 }

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,9 +17,6 @@ import com.scm.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 public class PageController {
@@ -112,7 +111,7 @@ public class PageController {
         // .about(userForm.getAbout())
         // .phoneNumber(userForm.getPhoneNumber())
         // .profilePic(
-        // "https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75")
+        // "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1723063362~exp=1723066962~hmac=40bdd3c4536fe5755447ca344ec7b9e73a05d9c397b2eb24f33aa73f45ff6072&w=740")
         // .build();
 
         User user = new User();
@@ -121,9 +120,9 @@ public class PageController {
         user.setPassword(userForm.getPassword());
         user.setAbout(userForm.getAbout());
         user.setPhoneNumber(userForm.getPhoneNumber());
-        user.setEnabled(false);
+        user.setEnabled(true);
         user.setProfilePic(
-                "https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75");
+                "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1723063362~exp=1723066962~hmac=40bdd3c4536fe5755447ca344ec7b9e73a05d9c397b2eb24f33aa73f45ff6072&w=740");
 
         User savedUser = userService.saveUser(user);
 

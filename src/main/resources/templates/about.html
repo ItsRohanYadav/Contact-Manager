@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
->
-  <head>
-    <title>About Page</title>
-  </head>
-  <body>
-    <div id="content">
-      <h1>Welcome to about page</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
-        ratione!
-      </p>
-    </div>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>
+        about
+    </title>
+</head>
+<body>
+    <section id="content">
+        <h1>Welcome to about page</h1>
+        <h2>Services offered by SCM</h2>
+        <center>
+            <h1 class="mb-3 text-gray-500 dark:text-gray-400 text-2xl " > Spring Boot Project</h1>
+            <h1 class="mb-3 text-gray-500 dark:text-gray-400 text-2xl " > Web Based Smart Contact Manager (Jan 2024 – Aug 2024)</h1>
+            <p class="mb-3 text-gray-500 dark:text-gray-400">Backend Development: Designed and implemented the backend using Java Spring Boot, ensuring robust and 
+            secure handling of user data and efficient communication with the database.</p>
+            <p class="mb-3 text-gray-500 dark:text-gray-400" >Database Management: Utilized MySQL for database design and management, ensuring optimal 
+                performance and scalability for storing and retrieving contact information.</p>
+            <p class="mb-3 text-gray-500 dark:text-gray-400" >Frontend Development: Created a responsive and user-friendly interface using HTML, CSS, and Tailwind, 
+                focusing on enhancing the user experience and accessibility.</p>
+            <p class="mb-3 text-gray-500 dark:text-gray-400" > Full-Stack Integration: Integrated the frontend and backend seamlessly, 
+                ensuring smooth data flow and realtime updates for users.</p>
+                
+        </center>
+    </section>
     <script>
-      console.log("about page");
+        console.log("about script")
     </script>
-    <script>
-      console.log("second about page script");
-    </script>
-  </body>
+</body>
 </html>

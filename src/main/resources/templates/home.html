@@ -9,10 +9,97 @@
   <body>
     <div id="content">
       <h1>Welcome to home page</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
-        ratione!
-      </p>
+      
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Contact Manager</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script>
+          // Check for saved user preference, if any, on load of the website
+          if (localStorage.getItem('theme') === 'dark' ||
+              (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+      
+          // Function to toggle theme
+          function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('theme', 'light');
+            } else {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
+            }
+          }
+        </script>
+      </head>
+      <body class="bg-gray-100 dark:bg-gray-900 dark:text-white">
+        <header class="bg-blue-600 dark:bg-blue-800 p-4">
+          <div class="container mx-auto flex justify-between items-center">
+            <div>
+              <h1 class="text-white text-3xl font-bold">Web Based Smart Contact Manager</h1>
+              <p class="text-blue-200 dark:text-blue-300">Manage your contacts efficiently and securely</p>
+            </div>
+            <button onclick="toggleTheme()" class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-4 py-2 rounded">
+              Toggle Theme
+            </button>
+          </div>
+        </header>
+      
+        <main class="container mx-auto mt-8 p-4">
+          <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Project Overview</h2>
+            <ul class="list-disc pl-5">
+              <li class="mb-2">
+                <strong>Backend Development:</strong> Designed and implemented the backend using Java Spring Boot, ensuring robust and secure handling of user data and efficient communication with the database.
+              </li>
+              <li class="mb-2">
+                <strong>Database Management:</strong> Utilized MySQL for database design and management, ensuring optimal performance and scalability for storing and retrieving contact information.
+              </li>
+              <li class="mb-2">
+                <strong>Frontend Development:</strong> Created a responsive and user-friendly interface using HTML, CSS, and Tailwind, focusing on enhancing the user experience and accessibility.
+              </li>
+              <li class="mb-2">
+                <strong>Full-Stack Integration:</strong> Integrated the frontend and backend seamlessly, ensuring smooth data flow and real-time updates for users.
+              </li>
+            </ul>
+          </section>
+      
+          <section class="mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-2">Contact Management</h3>
+                <p>Easily add, edit, and delete contacts with a simple interface.</p>
+              </div>
+              <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-2">Secure Data</h3>
+                <p>All contact data is securely stored and encrypted.</p>
+              </div>
+              <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                <p>Access your contacts from any device with our responsive design.</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      
+        <footer class="bg-blue-600 dark:bg-blue-800 p-4 mt-8">
+          <div class="container mx-auto text-center text-blue-200 dark:text-blue-300">
+            &copy; 2024 Smart Contact Manager. All rights reserved.
+          </div>
+        </footer>
+      </body>
+      </html>
+      
+
+
+
     </div>
     <script>
       console.log("Home page");
